@@ -5,8 +5,7 @@
 ## Papers
 
 * [Paper Reading | Towards Autonomous Parking using Vision-only Sensors (2021, IROS)](papers/paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md)
-* [How updates work](papers/how-updates-work.md)
-* [Accessibility](papers/accessibility.md)
+* [Page 1](papers/page-1.md)
 
 ## identity
 

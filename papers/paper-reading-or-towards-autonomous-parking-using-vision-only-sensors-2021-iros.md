@@ -37,3 +37,11 @@
 
 #### 2.1.2 停车位检测：
 
+
+
+## R. 参考文献
+
+* [ ] \[1] Y. Huang, J. Zhao, X. He, S. Zhang and T. Feng, "[Vision-based Semantic Mapping and Localization for Autonomous Indoor Parking](https://ieeexplore.ieee.org/document/8500516)," 2018 IEEE Intelligent Vehicles Symposium (IV), Changshu, China, 2018, pp. 636-641, doi: 10.1109/IVS.2018.8500516.
+* [ ] \[2] H. Grimmett et al., "[Integrating metric and semantic maps for vision-only automated parking](https://ieeexplore.ieee.org/abstract/document/7139484)," 2015 IEEE International Conference on Robotics and Automation (ICRA), Seattle, WA, USA, 2015, pp. 2159-2166, doi: 10.1109/ICRA.2015.7139484.
+* [ ] \[3] Lee, B., Wei, Y., and Guo, I. Y.: [AUTOMATIC PARKING OF SELF-DRIVING CAR BASED ON LIDAR](https://isprs-archives.copernicus.org/articles/XLII-2-W7/241/2017/isprs-archives-XLII-2-W7-241-2017.pdf), Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci., XLII-2/W7, 241–246, https://doi.org/10.5194/isprs-archives-XLII-2-W7-241-2017, 2017.
+* [ ] \[4] B. Li, L. Yang, J. Xiao, R. Valde, M. Wrenn and J. Leflar, "[Collaborative Mapping and Autonomous Parking for Multi-Story Parking Garage](https://ieeexplore.ieee.org/document/8307497)," in IEEE Transactions on Intelligent Transportation Systems, vol. 19, no. 5, pp. 1629-1639, May 2018, doi: 10.1109/TITS.2018.2791430.

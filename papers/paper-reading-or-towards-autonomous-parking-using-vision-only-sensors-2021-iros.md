@@ -81,6 +81,20 @@
 
 ### 3.2 平台概览
 
+下面介绍相机安装位置：
+
+从图1可知，一共有6个相机。其中2个构成基线为60 cm的前向双目系统，另外4个170视场的鱼眼摄像头分布在车身周围，使得系统可获取距车身0.1m以内的地面信息。
+
+<figure><img src="../.gitbook/assets/Car.png" alt="" width="375"><figcaption><p>图1. 车辆上安装的传感器</p></figcaption></figure>
+
+### 3.3 定位
+
+主要使用的方法基于[ORB-SLAM3](https://arxiv.org/abs/2007.11898) [\[21\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 而开发的，定位流程如下图：
+
+<figure><img src="../.gitbook/assets/pipeline (1).png" alt="" width="480"><figcaption><p>在线定位的流程</p></figcaption></figure>
+
+### 3.4 泊车环境测绘
+
 
 
 ## R. 参考文献

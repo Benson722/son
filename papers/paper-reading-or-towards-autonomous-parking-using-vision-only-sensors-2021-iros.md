@@ -27,17 +27,43 @@
 
 ## 2. 相关研究
 
-* 特殊标志：\[1] 通过基准标签实现定位，包括二维码和停车位ID。
-* 预建地图：\[2] 使用主动学习来检测停车位，从而预先构建停车位的语义图，用于定位。
-* 高精度激光雷达：                                                                                                                                     \[3] 通过从LiDAR点云中提取感兴趣区域来完成检测和定位的任务。                                                    \[4] 利用LiDAR检测周围障碍物，提出了一种基于车辆通信的协同导航方法
+* 特殊标志：[\[1\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 通过基准标签实现定位，包括二维码和停车位ID。
+* 预建地图：[\[2\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 使用主动学习来检测停车位，从而预先构建停车位的语义图，用于定位。
+* 高精度激光雷达：                                                                                                                                     [\[3\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 通过从LiDAR点云中提取感兴趣区域来完成检测和定位的任务。                                                    [\[4\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 利用LiDAR检测周围障碍物，提出了一种基于车辆通信的协同导航方法
 
 ### 2.1 自动停车系统的两个关键方面：
 
 #### 2.1.1 识别环境中的可通行区域 ：
 
+主流的可通行区域检测方法可分为**基于激光雷达**的方法和**基于图像**的方法。
+
+激光雷达:
+
+* [\[5\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian), [\[6\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 利用激光雷达传感器划分障碍物，通过建立网格地图分析场景中物体的三维高度，进而划分可通行区域。
+
+图像：
+
+* 基于图像的方法主要通过图像中场景的特征（例如颜色[\[7\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian)、纹理[\[8\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 和视觉消失点[\[9\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian)）来划分可遍历区域，这些基于特征的算法对阴影和灯光变化等噪声具有鲁棒性。
+* 基于深度学习的图像深度估计方法：Monodepth2[\[10\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 通过自监督学习达到了与监督学习相同的深度估计效果，使得深度估计算法摆脱了测距数据的限制；[\[11\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 提出了一种基于四个鱼眼相机特征点匹配的深度估计算法，但该算法要求鱼眼相机有足够的重叠视场进行特征匹配。
+
 #### 2.1.2 停车位检测：
 
+最常用的方法是检测停车线的特征，并根据停车位的几何结构进行识别。
 
+* [\[12\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian)、[\[13\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 分别通过Hough变换和Radon变换提取停车位线。
+* [\[14\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 使用 Canny 边缘和 Radon 变换对停车位线进行建模。
+* [\[15\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 利用索贝尔滤波器和随机样本一致性（RANSAC）来检测停车位线。
+
+利用深度传感器测量的深度信息来检测可以停车的空闲空间也是识别停车位的一种方法。
+
+* [\[16\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 中使用短程毫米波雷达构建用于停车位检测的网格地图。
+* [\[17\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 使用超声波传感器来评估停车位的占用状态。
+
+基于机器学习的方法也应用于停车位检测。
+
+* [\[18\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 在分隔线检测中使用线聚类方法，并使用基于多视图融合的学习方法来生成候选停车位。
+* [\[19\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 使用卷积神经网络来检测街上可用的停车位，并通过滚动空间间隔来识别候选停车位。
+* [\[20\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 用于语义分割的全卷积网络用于直接识别自由空间、槽标记、车辆和其他对象。
 
 ## R. 参考文献
 
@@ -45,3 +71,20 @@
 * [ ] \[2] H. Grimmett et al., "[Integrating metric and semantic maps for vision-only automated parking](https://ieeexplore.ieee.org/abstract/document/7139484)," 2015 IEEE International Conference on Robotics and Automation (ICRA), Seattle, WA, USA, 2015, pp. 2159-2166, doi: 10.1109/ICRA.2015.7139484.
 * [ ] \[3] Lee, B., Wei, Y., and Guo, I. Y.: [AUTOMATIC PARKING OF SELF-DRIVING CAR BASED ON LIDAR](https://isprs-archives.copernicus.org/articles/XLII-2-W7/241/2017/isprs-archives-XLII-2-W7-241-2017.pdf), Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci., XLII-2/W7, 241–246, https://doi.org/10.5194/isprs-archives-XLII-2-W7-241-2017, 2017.
 * [ ] \[4] B. Li, L. Yang, J. Xiao, R. Valde, M. Wrenn and J. Leflar, "[Collaborative Mapping and Autonomous Parking for Multi-Story Parking Garage](https://ieeexplore.ieee.org/document/8307497)," in IEEE Transactions on Intelligent Transportation Systems, vol. 19, no. 5, pp. 1629-1639, May 2018, doi: 10.1109/TITS.2018.2791430.
+* [ ] \[5] S. Kammel and B. Pitzer, "[Lidar-based lane marker detection and mapping](https://ieeexplore.ieee.org/document/4621318)," 2008 IEEE Intelligent Vehicles Symposium, Eindhoven, Netherlands, 2008, pp. 1137-1142, doi: 10.1109/IVS.2008.4621318.
+* [ ] \[6] G. Zhao and J. Yuan, "[Curb detection and tracking using 3D-LIDAR scanner](https://ieeexplore.ieee.org/abstract/document/6466890)," 2012 19th IEEE International Conference on Image Processing, Orlando, FL, USA, 2012, pp. 437-440, doi: 10.1109/ICIP.2012.6466890.
+* [ ] \[7] Broggi, A. and Berte, S., “[Vision-Based Road Detection in Automotive Systems: A Real-Time Expectation-Driven Approach](https://arxiv.org/abs/cs/9512102)”, _arXiv e-prints_, 1995. doi:10.48550/arXiv.cs/9512102.
+* [ ] \[8] Yinghua He, H. Wang and Bo Zhang, "[Color-based road detection in urban traffic scenes](https://ieeexplore.ieee.org/document/1364007)," in IEEE Transactions on Intelligent Transportation Systems, vol. 5, no. 4, pp. 309-318, Dec. 2004, doi: 10.1109/TITS.2004.838221.
+* [ ] \[9] C. Rasmussen, "[Grouping dominant orientations for ill-structured road following](https://ieeexplore.ieee.org/document/1315069)," Proceedings of the 2004 IEEE Computer Society Conference on Computer Vision and Pattern Recognition, 2004. CVPR 2004., Washington, DC, USA, 2004, pp. I-I, doi: 10.1109/CVPR.2004.1315069.
+* [ ] \[10] Godard, C., Mac Aodha, O., Firman, M., and Brostow, G., “[Digging Into Self-Supervised Monocular Depth Estimation](https://arxiv.org/abs/1806.01260)”, _arXiv e-prints_, 2018. doi:10.48550/arXiv.1806.01260.
+* [ ] \[11] C. Won, J. Ryu and J. Lim, "[End-to-End Learning for Omnidirectional Stereo Matching With Uncertainty Prior](https://ieeexplore.ieee.org/document/9086445)," in IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 43, no. 11, pp. 3850-3862, 1 Nov. 2021, doi: 10.1109/TPAMI.2020.2992497.
+* [ ] \[12] Ho Gi Jung, Dong Suk Kim, Pal Joo Yoon and Jaihie Kim, "[Parking Slot Markings Recognition for Automatic Parking Assist System](https://ieeexplore.ieee.org/document/1689613)," 2006 IEEE Intelligent Vehicles Symposium, Meguro-Ku, Japan, 2006, pp. 106-113, doi: 10.1109/IVS.2006.1689613.
+* [ ] \[13] S. Lee and S.-W. Seo, “[Available parking slot recognition based on slot context analysis](https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/iet-its.2015.0226),” Iet Intelligent Transport Systems.
+* [ ] \[14] C. Wang, H. Zhang, M. YANG, X. Wang, L. Ye, and C. Guo, “[Automatic parking based on a bird’s eye view vision system](https://journals.sagepub.com/doi/full/10.1155/2014/847406),” Advances in Mechanical Engineering, vol. 6, pp. 847406–847406, 08 2015.
+* [ ] \[15] J. K. Suhr, Member, IEEE, S. Member, and IEEE, “[Automatic Parking Space Detection and Tracking for Underground and Indoor Environments](https://ieeexplore.ieee.org/document/7460227),” IEEE Transactions on Industrial Electronics, vol. 63, no. 9, pp. 5687–5698, 2016.
+* [ ] \[16] M. R. Schmid, S. Ates, J. Dickmann, F. V. Hundelshausen, and H. J. Wuensche, “[Parking space detection with hierarchical dynamic occupancy grids](https://ieeexplore.ieee.org/document/5940476),”
+* [ ] \[17] A. Kianpisheh, N. Mustaffa, P. Limtrairut, and et al., “[Smart parking system (sps) architecture using ultrasonic detector](https://www.researchgate.net/publication/230701092\_Smart\_Parking\_System\_SPS\_Architecture\_Using\_Ultrasonic\_Detector),” International Journal of Software Engineering and Its Applications, vol. 6, no. 3, p. 518, 2012.
+* [ ] \[18] Q. Li and Y. Zhao, “[Geometric features-based parking slot detection](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6163349/),” Sensors, vol. 18, p. 2821, 08 2018.
+* [ ] \[19] K. Gkolias and E. I. Vlahogianni, “[Convolutional neural networks for on-street parking space detection in urban networks](https://ieeexplore.ieee.org/document/8577026),” IEEE Transac- tions on Intelligent Transportation Systems, pp. 1–10.
+* [ ] \[20] C. Jang and M. Sunwoo, “[Semantic segmentation-based parking space detection with standalone around view monitoring system](https://link.springer.com/article/10.1007/s00138-018-0986-z),” Machine Vision and Applications, 2019.
+

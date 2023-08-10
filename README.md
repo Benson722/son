@@ -10,7 +10,7 @@ description: 我的学习记录 | 学习了这么久总要留下一些东西，�
 
 1. Record and summarize the research papers I read in my Bachelor and Master period;
 2. Share my thinkings with others;
-3. Keep output and input.
+3. Keep output and input of knowledge.
 
 {% hint style="info" %}
 If you have problems or find some mistakes in my book, welcome to email me!

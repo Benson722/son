@@ -19,7 +19,7 @@
 * 本研究按以下步骤实现这一功能：
   1. 获得图像的尺度信息。通过车身的四个鱼眼相机，并采用**基于机器学习的单目深度预测算法**获得像素级的图像深度信息，可以达到类似LiDAR的感知效果；
   2. 优化方案的实时性。对生成的点云地图进行采样。
-  3. 获得更好的停车位检测效果。对鱼眼相机采集的图像进行**去畸变**和**逆透视**，变换为二维地平面，再使用基于**Radon变换**的方法检测停车位。
+  3. 获得更好的停车位检测效果。对鱼眼相机采集的图像进行**去畸变**和**逆透视**，变换为二维地平面，再使用**基于Radon变换**的方法检测停车位。
   4. 提出一种自主停车框架用来描述泊车任务，可分为三部分：度量空间、语义空间和行为空间。          度量空间包括环境的几何信息、车辆和相机的位姿描述；                                                                 语义空间包括提取的高级环境信息；                                                                                                  行为空间包括车辆的规划和控制信息。                                              &#x20;
 * <mark style="color:red;">**本文贡献**</mark>：
   * 将基于深度学习的单目深度预测方法应用到低成本鱼眼相机中，实现了类似于LiDAR的测距和传感效果。
@@ -65,6 +65,24 @@
 * [\[19\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 使用卷积神经网络来检测街上可用的停车位，并通过滚动空间间隔来识别候选停车位。
 * [\[20\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 用于语义分割的全卷积网络用于直接识别自由空间、槽标记、车辆和其他对象。
 
+## 3.  自动停车系统
+
+### 3.1 驾驶空间框架
+
+一共有六个相机，作用不同，处理的方法也不同：
+
+* 前视双目相机（<mark style="color:red;">度量空间</mark>）：应用 [ORB-SLAM3](https://arxiv.org/abs/2007.11898)，来确定车辆的姿态；应用改进的半全局匹配（SGM）[\[22\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian)和 MonoDepth2 [\[10\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian)，来进行双目深度估计。
+* 四个鱼眼相机（<mark style="color:red;">度量空间</mark>）：应用改进的半全局匹配（SGM）[\[22\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian)和 MonoDepth2 [\[10\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian)，来进行单目深度估计。
+
+深度估计的结果在构造八叉树图或地平面分割后，构建的度量空间中的三维点云图用于生成用于路径规划的**可遍历图**。
+
+* 从鱼眼相机获得的图像，经过去畸变和反向透视变化，再经过本文提出的**基于 Radon 变换**的停车位检测方法、**线滤波器和角滤波器模块**，提取出**停车位**（<mark style="color:red;">语义空间</mark>）。
+* 获得用于路径规划的**可遍历图**后，使用**基于几何的路径规划方法**来生成适当的路径，避免停车过程中的碰撞（<mark style="color:red;">行为空间</mark>）。
+
+### 3.2 平台概览
+
+
+
 ## R. 参考文献
 
 * [ ] \[1] Y. Huang, J. Zhao, X. He, S. Zhang and T. Feng, "[Vision-based Semantic Mapping and Localization for Autonomous Indoor Parking](https://ieeexplore.ieee.org/document/8500516)," 2018 IEEE Intelligent Vehicles Symposium (IV), Changshu, China, 2018, pp. 636-641, doi: 10.1109/IVS.2018.8500516.
@@ -87,4 +105,9 @@
 * [ ] \[18] Q. Li and Y. Zhao, “[Geometric features-based parking slot detection](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6163349/),” Sensors, vol. 18, p. 2821, 08 2018.
 * [ ] \[19] K. Gkolias and E. I. Vlahogianni, “[Convolutional neural networks for on-street parking space detection in urban networks](https://ieeexplore.ieee.org/document/8577026),” IEEE Transac- tions on Intelligent Transportation Systems, pp. 1–10.
 * [ ] \[20] C. Jang and M. Sunwoo, “[Semantic segmentation-based parking space detection with standalone around view monitoring system](https://link.springer.com/article/10.1007/s00138-018-0986-z),” Machine Vision and Applications, 2019.
+* [ ] \[21]&#x20;
+* [ ] \[22]&#x20;
+* [ ] \[23]&#x20;
+* [ ] \[24]&#x20;
+* [ ] \[25]&#x20;
 

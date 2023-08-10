@@ -89,9 +89,11 @@
 
 ### 3.3 定位
 
-主要使用的方法基于[ORB-SLAM3](https://arxiv.org/abs/2007.11898) [\[21\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 而开发的，定位流程如下图：
+主要使用的方法基于[ORB-SLAM3](https://arxiv.org/abs/2007.11898) [\[21\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 而开发的，定位流程如图2所示：
 
-<figure><img src="../.gitbook/assets/pipeline (1).png" alt="" width="480"><figcaption><p>在线定位的流程</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/pipeline (1).png" alt="" width="480"><figcaption><p>图2. 在线定位的流程</p></figcaption></figure>
+
+从图2不难发现，图片同步输入后进行预处理，然后提取ORB特征，进行车辆位姿预测，再进行建图“三板斧”——跟踪，局部建图，回环检测。
 
 ### 3.4 泊车环境测绘
 

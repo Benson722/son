@@ -4,8 +4,8 @@
 
 ## Papers
 
+* [🙈 Paper and Code Reading |  Cartographer](papers/paper-and-code-reading-or-cartographer.md)
 * [Paper Reading | Towards Autonomous Parking using Vision-only Sensors (2021, IROS)](papers/paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md)
-* [Page 1](papers/page-1.md)
 
 ## identity
 

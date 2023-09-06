@@ -1,4 +1,4 @@
-# Paper Reading | Towards Autonomous Parking using Vision-only Sensors (2021, IROS)
+# Paper Reading | Towards Autonomous Parking using Vision-only Sensors (2021)
 
 > Y. Yang et al., "[Towards Autonomous Parking using Vision-only Sensors](https://ieeexplore.ieee.org/document/9636106)," 2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), Prague, Czech Republic, 2021, pp. 2038-2044, doi: 10.1109/IROS51168.2021.9636106.
 >
@@ -27,9 +27,9 @@
 
 ## 2. 相关研究
 
-* 特殊标志：[\[1\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 通过基准标签实现定位，包括二维码和停车位ID。
-* 预建地图：[\[2\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 使用主动学习来检测停车位，从而预先构建停车位的语义图，用于定位。
-* 高精度激光雷达：                                                                                                                                     [\[3\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 通过从LiDAR点云中提取感兴趣区域来完成检测和定位的任务。                                                    [\[4\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 利用LiDAR检测周围障碍物，提出了一种基于车辆通信的协同导航方法
+* 特殊标志：[\[1\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian) 通过基准标签实现定位，包括二维码和停车位ID。
+* 预建地图：[\[2\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian) 使用主动学习来检测停车位，从而预先构建停车位的语义图，用于定位。
+* 高精度激光雷达：                                                                                                                                     [\[3\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian) 通过从LiDAR点云中提取感兴趣区域来完成检测和定位的任务。                                                    [\[4\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian) 利用LiDAR检测周围障碍物，提出了一种基于车辆通信的协同导航方法
 
 ### 2.1 自动停车系统的两个关键方面：
 
@@ -39,31 +39,31 @@
 
 激光雷达:
 
-* [\[5\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian), [\[6\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 利用激光雷达传感器划分障碍物，通过建立网格地图分析场景中物体的三维高度，进而划分可通行区域。
+* [\[5\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian), [\[6\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian) 利用激光雷达传感器划分障碍物，通过建立网格地图分析场景中物体的三维高度，进而划分可通行区域。
 
 图像：
 
-* 基于图像的方法主要通过图像中场景的特征（例如颜色[\[7\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian)、纹理[\[8\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 和视觉消失点[\[9\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian)）来划分可遍历区域，这些基于特征的算法对阴影和灯光变化等噪声具有鲁棒性。
-* 基于深度学习的图像深度估计方法：Monodepth2[\[10\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 通过自监督学习达到了与监督学习相同的深度估计效果，使得深度估计算法摆脱了测距数据的限制；[\[11\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 提出了一种基于四个鱼眼相机特征点匹配的深度估计算法，但该算法要求鱼眼相机有足够的重叠视场进行特征匹配。
+* 基于图像的方法主要通过图像中场景的特征（例如颜色[\[7\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian)、纹理[\[8\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian) 和视觉消失点[\[9\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian)）来划分可遍历区域，这些基于特征的算法对阴影和灯光变化等噪声具有鲁棒性。
+* 基于深度学习的图像深度估计方法：Monodepth2[\[10\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian) 通过自监督学习达到了与监督学习相同的深度估计效果，使得深度估计算法摆脱了测距数据的限制；[\[11\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian) 提出了一种基于四个鱼眼相机特征点匹配的深度估计算法，但该算法要求鱼眼相机有足够的重叠视场进行特征匹配。
 
 #### 2.1.2 停车位检测：
 
 最常用的方法是检测停车线的特征，并根据停车位的几何结构进行识别。
 
-* [\[12\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian)、[\[13\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 分别通过Hough变换和Radon变换提取停车位线。
-* [\[14\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 使用 Canny 边缘和 Radon 变换对停车位线进行建模。
-* [\[15\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 利用索贝尔滤波器和随机样本一致性（RANSAC）来检测停车位线。
+* [\[12\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian)、[\[13\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian) 分别通过Hough变换和Radon变换提取停车位线。
+* [\[14\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian) 使用 Canny 边缘和 Radon 变换对停车位线进行建模。
+* [\[15\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian) 利用索贝尔滤波器和随机样本一致性（RANSAC）来检测停车位线。
 
 利用深度传感器测量的深度信息来检测可以停车的空闲空间也是识别停车位的一种方法。
 
-* [\[16\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 中使用短程毫米波雷达构建用于停车位检测的网格地图。
-* [\[17\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 使用超声波传感器来评估停车位的占用状态。
+* [\[16\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian) 中使用短程毫米波雷达构建用于停车位检测的网格地图。
+* [\[17\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian) 使用超声波传感器来评估停车位的占用状态。
 
 基于机器学习的方法也应用于停车位检测。
 
-* [\[18\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 在分隔线检测中使用线聚类方法，并使用基于多视图融合的学习方法来生成候选停车位。
-* [\[19\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 使用卷积神经网络来检测街上可用的停车位，并通过滚动空间间隔来识别候选停车位。
-* [\[20\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 用于语义分割的全卷积网络用于直接识别自由空间、槽标记、车辆和其他对象。
+* [\[18\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian) 在分隔线检测中使用线聚类方法，并使用基于多视图融合的学习方法来生成候选停车位。
+* [\[19\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian) 使用卷积神经网络来检测街上可用的停车位，并通过滚动空间间隔来识别候选停车位。
+* [\[20\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian) 用于语义分割的全卷积网络用于直接识别自由空间、槽标记、车辆和其他对象。
 
 ## 3.  自动停车系统
 
@@ -71,8 +71,8 @@
 
 一共有六个相机，作用不同，处理的方法也不同：
 
-* 前视双目相机（<mark style="color:red;">度量空间</mark>）：应用 [ORB-SLAM3](https://arxiv.org/abs/2007.11898)，来确定车辆的姿态；应用改进的半全局匹配（SGM）[\[22\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian)和 MonoDepth2 [\[10\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian)，来进行双目深度估计。
-* 四个鱼眼相机（<mark style="color:red;">度量空间</mark>）：应用改进的半全局匹配（SGM）[\[22\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian)和 MonoDepth2 [\[10\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian)，来进行单目深度估计。
+* 前视双目相机（<mark style="color:red;">度量空间</mark>）：应用 [ORB-SLAM3](https://arxiv.org/abs/2007.11898)，来确定车辆的姿态；应用改进的半全局匹配（SGM）[\[22\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian)和 MonoDepth2 [\[10\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian)，来进行双目深度估计。
+* 四个鱼眼相机（<mark style="color:red;">度量空间</mark>）：应用改进的半全局匹配（SGM）[\[22\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian)和 MonoDepth2 [\[10\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian)，来进行单目深度估计。
 
 深度估计的结果在构造八叉树图或地平面分割后，构建的度量空间中的三维点云图用于生成用于路径规划的**可遍历图**。
 
@@ -89,7 +89,7 @@
 
 ### 3.3 定位
 
-主要使用的方法基于[ORB-SLAM3](https://arxiv.org/abs/2007.11898) [\[21\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 而开发的，定位流程如图2所示：
+主要使用的方法基于[ORB-SLAM3](https://arxiv.org/abs/2007.11898) [\[21\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian) 而开发的，定位流程如图2所示：
 
 <figure><img src="../.gitbook/assets/pipeline (1).png" alt="" width="480"><figcaption><p>图2. 在线定位的流程</p></figcaption></figure>
 
@@ -99,7 +99,7 @@
 
 该节主要讲述构建可遍历地图的过程。
 
-1. 首先需要从鱼眼相机采集的图像中获取距离信息，以代替激光雷达的作用。主流方法大多是**基于深度学习算法**，本文使用了**Monodepth2**[\[10\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md#r.-can-kao-wen-xian) 方法，它只需要连续的视频序列进行训练，不需要其他测距传感器进行标记。
+1. 首先需要从鱼眼相机采集的图像中获取距离信息，以代替激光雷达的作用。主流方法大多是**基于深度学习算法**，本文使用了**Monodepth2**[\[10\]](paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021.md#r.-can-kao-wen-xian) 方法，它只需要连续的视频序列进行训练，不需要其他测距传感器进行标记。
 2. 获得图像的像素深度后，我们将像素投影到三维度量空间中构建**点云图**，并进一步将其转换为**八叉树图**，最后将其投影到地面形成**可遍历的地图**。
 3. 为了优化实时运行速度，对于双目相机，采用改进的半全局匹配方法获得密集视差图，对于图像中的每个像素，其特征向量通过 Center‑symmetric census transform（**CSCT**）计算\[23]。 通过特征向量的 Hamming distance（**汉明距离**）来衡量两个像素之间的相似度，找到每个像素相似度最大的匹配点，经过代价聚合和视差细化过滤后得到**稠密视差图**。
 4. 使用**基于stixel**的自由空间分割方法，计算每个像素处的地面视差理论值，结合实际计算得到的稠密视差图，通过**动态规划算法**分割图像的地平面部分。

@@ -6,7 +6,7 @@
 
 * [🙈 Paper and Code Reading |  Cartographer](papers/paper-and-code-reading-or-cartographer.md)
 * [Paper Reading | Towards Autonomous Parking using Vision-only Sensors (2021)](papers/paper-reading-or-towards-autonomous-parking-using-vision-only-sensors-2021-iros.md)
-* [Paper Reading | Incremental Visual-Inertial 3D Mesh Generation with Structural Regularities (2019)](papers/paper-reading-or-incremental-visual-inertial-3d-mesh-generation-with-structural-regularities-2019.md)
+* [Paper Reading | VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator  (2018)](papers/paper-reading-or-vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator-2018.md)
 
 ## identity
 

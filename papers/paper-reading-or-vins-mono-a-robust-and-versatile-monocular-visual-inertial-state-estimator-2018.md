@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Paper Reading | VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator  (2018)
 
 > T. Qin, P. Li and S. Shen, "VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator," in IEEE Transactions on Robotics, vol. 34, no. 4, pp. 1004-1020, Aug. 2018, doi: 10.1109/TRO.2018.2853729.

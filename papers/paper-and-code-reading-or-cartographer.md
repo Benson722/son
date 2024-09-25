@@ -1,5 +1,6 @@
 ---
 description: A classical algorithm | From
+hidden: true
 ---
 
 # 🙈 Paper and Code Reading |  Cartographer
